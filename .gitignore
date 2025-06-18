@@ -1,0 +1,12 @@
+# Arquivos sensíveis
+.env
+
+# Dependências
+# node_modules/
+
+# Logs
+*.log
+
+# Cache do sistema
+.DS_Store
+Thumbs.db
