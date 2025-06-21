@@ -27,7 +27,11 @@ async function connectDB() {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://digsix.github.io',
+    methods: ['GET', 'POST'],
+    credentials: false
+  }));
 app.use(express.json());
 
 // Rotas básicas
