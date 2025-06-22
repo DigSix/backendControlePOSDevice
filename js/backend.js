@@ -51,7 +51,6 @@ app.post("/api/login", async (req, res) => {
 
 app.get('/api/loadDevices', async (req, res) => {
     try {
-        console.log("loadDevices Ok!");
         const [rows] = await connection.execute(`
             SELECT pd.serialNumber, pd.logicalNumber, pd.reciveDate, 
                    ps.possibleStatus, pr.possibleReason, 
@@ -247,7 +246,6 @@ app.post("/api/editDevice", async(req, res) => {
 
 app.get("/api/storegedDevices", async(req, res) => {
     try {
-        console.log("storegedDevices Ok!");
         const [rows] = await connection.execute(`SELECT COUNT(*) AS total FROM posDevices WHERE statusId = 2;`);
         const quantity = rows[0].total;
         res.json({quantity});
