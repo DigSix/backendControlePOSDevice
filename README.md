@@ -1,12 +1,12 @@
-# 📡 Backend - Controle de Dispositivos POS
+#  Backend - Controle de Dispositivos POS
 
 Esse é o backend do sistema que desenvolvi para ajudar a mim e os outros técnicos do time a controlar os POS (maquininhas) que entram e saem do estoque. Antes era tudo feito em planilha.
 
-[🖥️ Front-end](https://digsix.github.io/frontendControlePOSDevice/)
+[ Front-end](https://digsix.github.io/frontendControlePOSDevice/)
 
 ---
 
-## ⚙️ O que ele faz
+##  O que ele faz
 
 - Rota de login (usuário estático por enquanto)
 - Cadastro e edição de dispositivos POS
@@ -16,7 +16,7 @@ Esse é o backend do sistema que desenvolvi para ajudar a mim e os outros técni
 
 ---
 
-## 🚀 Tecnologias utilizadas
+##  Tecnologias utilizadas
 
 - Node.js
 - Express
