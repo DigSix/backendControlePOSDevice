@@ -16,7 +16,7 @@ async function connectDB() {
 
 function getConnection() {
     if (!connection) {
-        throw new Error('Conexão não estabelecida.');
+        throw new Error("Conexão não estabelecida.");
     }
     return connection;
 }

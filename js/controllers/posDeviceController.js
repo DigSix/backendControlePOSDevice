@@ -30,8 +30,8 @@ exports.getAllDevices = async (req, res) => {
           
         res.json(devices);
     } catch (error) {
-        console.error('Erro ao buscar dispositivos:', error);
-        res.status(500).json({ error: 'Erro ao buscar dispositivos' });
+        console.error("Erro ao buscar dispositivos:", error);
+        res.status(500).json({ error: "Erro ao buscar dispositivos" });
     }
 };
 
@@ -57,15 +57,15 @@ exports.createDevice = async (req, res) => {
         device.validateDatas();
 
         const [result] = await connection.execute(
-            'INSERT INTO posDevices (serialNumber, logicalNumber, reciveDate, statusId, changeReasonId, protocol, exitDate) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            "INSERT INTO posDevices (serialNumber, logicalNumber, reciveDate, statusId, changeReasonId, protocol, exitDate) VALUES (?, ?, ?, ?, ?, ?, ?)",
             [device.serialNumber, device.logicalNumber, device.reciveDate, device.status, device.changeReason, device.protocol, device.exitDate]
         );
 
-        res.status(201).json({ message: 'Dispositivo criado com sucesso', id: result.insertId });
+        res.status(201).json({ message: "Dispositivo criado com sucesso", id: result.insertId });
 
     } catch (error) {
-        console.error('Erro ao criar dispositivo:', error);
-        res.status(500).json({ error: 'Erro ao criar dispositivo' });
+        console.error("Erro ao criar dispositivo:", error);
+        res.status(500).json({ error: "Erro ao criar dispositivo" });
     }
 };
 
@@ -141,8 +141,8 @@ exports.filterDevices = async (req, res) => {
         });
         res.json(devices);
     } catch (error) {
-        console.error('Erro ao filtrar dispositivos:', error);
-        res.status(500).json({ error: 'Erro ao filtrar dispositivos' });
+        console.error("Erro ao filtrar dispositivos:", error);
+        res.status(500).json({ error: "Erro ao filtrar dispositivos" });
     }
 };
 
@@ -187,14 +187,14 @@ exports.editDevice = async (req, res) => {
         );
 
         if (result.affectedRows === 0) {
-            return res.status(404).json({ error: 'Dispositivo não encontrado ou nenhum dado alterado.' });
+            return res.status(404).json({ error: "Dispositivo não encontrado ou nenhum dado alterado." });
         }
 
-        res.json({ message: 'Dispositivo atualizado com sucesso!' });
+        res.json({ message: "Dispositivo atualizado com sucesso!" });
 
     } catch (error) {
-        console.error('Erro ao atualizar dispositivo:', error);
-        res.status(500).json({ error: 'Erro ao atualizar dispositivo' });
+        console.error("Erro ao atualizar dispositivo:", error);
+        res.status(500).json({ error: "Erro ao atualizar dispositivo" });
     }
 };
 
@@ -205,7 +205,7 @@ exports.getStoredDevices = async (req, res) => {
         const quantity = rows[0].total;
         res.json({quantity});
     } catch (error) {
-        console.error('Erro ao buscar quantidade de dispositivos armazenados:', error);
-        res.status(500).json({ error: 'Erro ao buscar quantidade de dispositivos armazenados' });
+        console.error("Erro ao buscar quantidade de dispositivos armazenados:", error);
+        res.status(500).json({ error: "Erro ao buscar quantidade de dispositivos armazenados" });
     }
 };
