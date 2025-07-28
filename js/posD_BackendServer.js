@@ -7,12 +7,12 @@ const posDeviceRouter = require("./routers/posDeviceRouter.js")
 const { connectDB } = require("./database/conection.js");
 
 // Configuração usuário statico
-const staticUser = require("./staticUser.js");
+const staticUser = require("./models/staticUser.js");
 
 // Middleware
 app.use(cors({
     origin: function (origin, callback) {
-        if (!origin || origin.startsWith("http://131.107") || origin.startsWith("http://localhost")) {
+        if (origin.startsWith("http://131.107") && origin.includes(":3001") || origin === "http://localhost:3001") {
             callback(null, true);
         } else {
             callback(new Error("Not allowed by CORS"));

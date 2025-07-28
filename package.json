@@ -4,8 +4,8 @@
   "description": "Sistema de controle de dispositivos POS",
   "main": "./js/backend.js",
   "scripts": {
-    "start": "node ./js/backend.js",
-    "dev": "nodemon ./js/backend.js"
+    "start": "node ./js/posD_BackendServer.js",
+    "dev": "nodemon ./js/posD_BackendServer.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
