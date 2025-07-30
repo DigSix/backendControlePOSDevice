@@ -10,9 +10,10 @@ const { connectDB } = require("./database/conection.js");
 const staticUser = require("./models/staticUser.js");
 
 // Middleware
+app.use(express.json());
 app.use(cors({
     origin: function (origin, callback) {
-        if (origin.startsWith("http://131.107") && origin.includes(":3001") || origin === "http://localhost:3001") {
+        if (origin.startsWith("http://131.107.1.18:3001")) {
             callback(null, true);
         } else {
             callback(new Error("Not allowed by CORS"));
@@ -21,7 +22,7 @@ app.use(cors({
     methods: ["GET", "POST"],
     credentials: false
 }));
-app.use(express.json());
+
 app.use("/api", posDeviceRouter);
 
 // Rotas básicas

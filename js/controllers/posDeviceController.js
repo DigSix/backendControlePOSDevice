@@ -53,7 +53,7 @@ exports.createDevice = async (req, res) => {
                                     changeReason, 
                                     protocol, 
                                     exitDate);
-
+        
         device.validateDatas();
 
         const [result] = await connection.execute(
@@ -202,6 +202,18 @@ exports.getStoredDevices = async (req, res) => {
     try {
         const connection = getConnection();
         const [rows] = await connection.execute(`SELECT COUNT(*) AS total FROM posDevices WHERE statusId = 2;`);
+        const quantity = rows[0].total;
+        res.json({quantity});
+    } catch (error) {
+        console.error("Erro ao buscar quantidade de dispositivos armazenados:", error);
+        res.status(500).json({ error: "Erro ao buscar quantidade de dispositivos armazenados" });
+    }
+};
+
+exports.getBrokenDevices = async (req, res) => {
+    try {
+        const connection = getConnection();
+        const [rows] = await connection.execute(`SELECT COUNT(*) AS total FROM posDevices WHERE statusId = 4;`);
         const quantity = rows[0].total;
         res.json({quantity});
     } catch (error) {

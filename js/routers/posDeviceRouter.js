@@ -7,5 +7,6 @@ posDeviceRouter.post("/createDevice", posDeviceController.createDevice);
 posDeviceRouter.post("/filterDevices", posDeviceController.filterDevices);
 posDeviceRouter.post("/editDevice", posDeviceController.editDevice);
 posDeviceRouter.get("/storagedDevices", posDeviceController.getStoredDevices);
+posDeviceRouter.get("/brokenDevices", posDeviceController.getBrokenDevices);
 
 module.exports = posDeviceRouter;
