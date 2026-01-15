@@ -1,29 +1,31 @@
-#  Backend - Controle de Dispositivos POS
+## POS Device Control — Backend
+[Frontend (GitHub Pages)](https://digsix.github.io/frontendControlePOSDevice)
 
-Esse é o backend do sistema que desenvolvi para ajudar a mim e os outros técnicos do time a controlar os POS (maquininhas) que entram e saem do estoque. Antes era tudo feito em planilha.
+### About
 
-[ Front-end](https://digsix.github.io/frontendControlePOSDevice)
+This repository contains the backend for a system built to manage **POS devices** (card terminals) moving in and out of stock.
 
----
+The tool was created to replace a spreadsheet-based workflow and provide a more reliable and structured way for technicians to track devices, status, and inventory changes.
 
-##  O que ele faz
+### What it does
 
-- Rota de login (usuário estático por enquanto)
-- Cadastro e edição de dispositivos POS
-- Filtro de dispositivos por vários campos
-- Conexão com banco de dados MySQL
-- Suporte a CORS (usado com frontend no GitHub Pages)
+- Authentication endpoint (static user for now)  
+- Create and update POS devices  
+- Filter devices by multiple fields  
+- MySQL database integration  
+- CORS support for a separate frontend hosted on GitHub Pages  
 
----
+### Stack
 
-##  Tecnologias utilizadas
+- Node.js  
+- Express  
+- MySQL2 (connection pool)  
+- dotenv  
+- cors  
 
-- Node.js
-- Express
-- MySQL2 (com pool de conexão)
-- dotenv (variáveis de ambiente)
-- cors (pra permitir requisição entre domínios)
+### Status
 
----
-## ❤️ Melhorias
-O projeto está longe de estar concluído, ainda tenho muita melhoria a ser feita, mas, já pude aprender muito com cada etapa, sempre fazendo tudo com carinho. Contei com ajuda de IA e dos meus amigos da faculdade e trabalho.
+This project is still under development.  
+It already solves the core inventory problem and serves as a foundation for future improvements and refinements.
+
+Maintained by [DigSix](https://github.com/DigSix)
